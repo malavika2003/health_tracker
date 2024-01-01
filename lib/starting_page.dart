@@ -7,8 +7,9 @@ class StartingPage extends StatelessWidget{
     return  Scaffold(
       appBar: AppBar(
           title: const Text("HealthApp"),
+          backgroundColor: Colors.black12,
       ),
-      body: Center(
+      body: const Center(
         child: Text('Health App',
         style: TextStyle(
           fontSize: 30,
