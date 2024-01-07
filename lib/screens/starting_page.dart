@@ -9,13 +9,14 @@ class StartingPage extends StatelessWidget{
           title: const Text("HealthApp"),
           backgroundColor: Colors.black12,
       ),
-      body: const Center(
-        child: Text('Health App',
-        style: TextStyle(
-          fontSize: 30,
-            fontWeight: FontWeight.bold),
+      body:  const Center(
+ 
+          child: Text('Health App',
+          style: TextStyle(
+            fontSize: 30,
+              fontWeight: FontWeight.bold),
+          ),
         ),
-      ),
     );
   }
 }
