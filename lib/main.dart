@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:health_tracker/screens/home_screen.dart';
 import 'package:health_tracker/screens/tabs.dart';
 
 
 final theme = ThemeData(
-  useMaterial3: true,
+  useMaterial3: false,
   colorScheme: ColorScheme.fromSeed(
     brightness: Brightness.light,
-      seedColor: const Color.fromARGB(255, 0, 131, 127),
+      seedColor: const Color.fromARGB(255, 0, 132, 127),
   ),
   textTheme: GoogleFonts.acmeTextTheme()
 );
@@ -22,7 +23,7 @@ class App extends StatelessWidget{
   Widget build(BuildContext context) {
     return MaterialApp(
         theme: theme,
-        home: const TabsScreen(),
+        home: HomeScreen(),
     );
   }
 }
