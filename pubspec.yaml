@@ -67,6 +67,10 @@ flutter:
   assets:
 
    - assets/
+   - assets/images/cyclebunny.jpg
+   - assets/images/cutebunny.jpg
+   - assets/images/meditate1.jpg
+
 
 
 
