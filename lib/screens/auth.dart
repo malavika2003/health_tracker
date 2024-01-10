@@ -148,7 +148,11 @@ class AuthScreen extends StatefulWidget{
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Theme.of(context).colorScheme.tertiary
                             ),
-                              child:  Text(_isLogin ? 'Login' :'Signup'),
+                              child:  Text(_isLogin ? 'Login' :'Signup',
+                                style: const TextStyle(
+                                  color: Colors.white
+                                ),
+                              ),
                           ),
                           TextButton(
                               onPressed: () {

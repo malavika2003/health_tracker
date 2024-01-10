@@ -10,7 +10,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 
 final theme = ThemeData(
-  useMaterial3: false,
+  useMaterial3: true,
   colorScheme: ColorScheme.fromSeed(
    // brightness: Brightness.light,
       //seedColor: const Color.fromARGB(255, 0, 132, 127),
@@ -33,19 +33,7 @@ class App extends StatelessWidget{
   Widget build(BuildContext context) {
     return MaterialApp(
         theme: theme,
-        home: const StartingPage(),
-      // StreamBuilder(
-      //     stream: FirebaseAuth.instance.authStateChanges() ,
-      //     builder: (ctx, snapshot) {
-      //       if(snapshot.connectionState == ConnectionState.waiting){
-      //         return const SplashScreen();
-      //       }
-      //       if(snapshot.hasData){
-      //         return HomeScreen();
-      //       }
-      //       return const AuthScreen();
-      //     },
-      //   ),
+        home: const StartingPage()
     );
   }
 }
