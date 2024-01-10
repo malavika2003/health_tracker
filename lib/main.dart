@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:health_tracker/screens/auth.dart';
 import 'package:health_tracker/screens/home_screen.dart';
 import 'package:health_tracker/screens/splash.dart';
+import 'package:health_tracker/screens/starting_page.dart';
 import 'package:health_tracker/screens/tabs.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
@@ -32,18 +33,19 @@ class App extends StatelessWidget{
   Widget build(BuildContext context) {
     return MaterialApp(
         theme: theme,
-        home: StreamBuilder(
-          stream: FirebaseAuth.instance.authStateChanges() ,
-          builder: (ctx, snapshot) {
-            if(snapshot.connectionState == ConnectionState.waiting){
-              return const SplashScreen();
-            }
-            if(snapshot.hasData){
-              return HomeScreen();
-            }
-            return const AuthScreen();
-          },
-        ),
+        home: const StartingPage(),
+      // StreamBuilder(
+      //     stream: FirebaseAuth.instance.authStateChanges() ,
+      //     builder: (ctx, snapshot) {
+      //       if(snapshot.connectionState == ConnectionState.waiting){
+      //         return const SplashScreen();
+      //       }
+      //       if(snapshot.hasData){
+      //         return HomeScreen();
+      //       }
+      //       return const AuthScreen();
+      //     },
+      //   ),
     );
   }
 }

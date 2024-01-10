@@ -36,9 +36,10 @@ class MainDrawer extends StatelessWidget {
             )
           ),
           ListTile(
-            leading: Icon(Icons.logout,
+            leading: Icon(Icons.person_rounded,
               size: 48,
-              color: Theme.of(context).colorScheme.primary,),
+              color: Theme.of(context).colorScheme.primary,
+            ),
             title:  Text('Logout',
               style: Theme.of(context).textTheme.titleSmall!.copyWith(
                 color: Theme.of(context).colorScheme.primary,
