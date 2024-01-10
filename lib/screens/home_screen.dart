@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:health_tracker/widgets/emoji_card.dart';
 import 'package:health_tracker/widgets/main_drawer.dart';
 import 'package:health_tracker/widgets/quotes_area.dart';
 
@@ -19,10 +20,14 @@ class HomeScreen extends StatelessWidget {
       drawer:const MainDrawer(),
 
 
-      body: const Column(
+      body:  Column(
         children: [
           SizedBox(height: 20),
           QuotesSection(),
+          SizedBox(height: 20),
+          MoodInputScreen(),
+          SizedBox(height: 20),
+
         ],
       ),
 
