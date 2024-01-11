@@ -1,13 +1,15 @@
-import 'package:firebase_auth/firebase_auth.dart';
+//import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:health_tracker/screens/auth.dart';
-import 'package:health_tracker/screens/home_screen.dart';
-import 'package:health_tracker/screens/splash.dart';
+//import 'package:health_tracker/screens/auth.dart';
+//import 'package:health_tracker/screens/home_screen.dart';
+//import 'package:health_tracker/screens/splash.dart';
 import 'package:health_tracker/screens/starting_page.dart';
-import 'package:health_tracker/screens/tabs.dart';
+//import 'package:health_tracker/screens/tabs.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:health_tracker/screens/task_screen.dart';
 import 'firebase_options.dart';
+
 
 final theme = ThemeData(
   useMaterial3: true,
@@ -34,6 +36,7 @@ class App extends StatelessWidget{
     return MaterialApp(
         theme: theme,
         home: const StartingPage()
+     // const TaskScreen(),
     );
   }
 }
