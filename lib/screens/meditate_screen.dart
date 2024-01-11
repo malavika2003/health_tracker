@@ -10,7 +10,7 @@ class MeditateScreen extends StatelessWidget {
       body: Center(
         child: Text('Meditate screen'),
       ),
-      bottomNavigationBar: const BottomNavigation(),
+      bottomNavigationBar: BottomNavigation(),
     );
   }
 }

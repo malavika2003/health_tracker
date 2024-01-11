@@ -10,6 +10,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:health_tracker/screens/task_screen.dart';
 import 'firebase_options.dart';
 
+
 final theme = ThemeData(
   useMaterial3: true,
   colorScheme: ColorScheme.fromSeed(

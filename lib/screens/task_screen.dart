@@ -7,6 +7,7 @@ import '../widgets/main_drawer.dart';
 class TaskScreen extends StatefulWidget{
 
   const TaskScreen({super.key});
+
   @override
   State<TaskScreen> createState() {
     return _TaskScreenState();
@@ -26,7 +27,7 @@ class _TaskScreenState extends State<TaskScreen> {
   // }
 
 
-  void fetchUsername() async {
+   fetchUsername() async {
     var snapshot = await FirebaseFirestore.instance.collection('users').doc(
         username).get();
 
@@ -37,12 +38,12 @@ class _TaskScreenState extends State<TaskScreen> {
     }
 
   }
-  @override
-  void initState() {
-    super.initState();
-    // Call a function to fetch the username when the screen is initialized
-    fetchUsername();
-  }
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   // Call a function to fetch the username when the screen is initialized
+  //   fetchUsername();
+  // }
   createTask() {
     DocumentReference documentReference = FirebaseFirestore.instance
         .collection('Tasks').doc(title);
@@ -63,6 +64,7 @@ class _TaskScreenState extends State<TaskScreen> {
 
   @override
   Widget build(BuildContext context) {
+    username = fetchUsername.toString();
     return Scaffold(
       appBar: AppBar(
         title: Text('Welcome back, \n $username',
@@ -99,6 +101,9 @@ class _TaskScreenState extends State<TaskScreen> {
                           subtitle: Text((documentSnapshot != null)
                               ? (documentSnapshot['taskDesc'])
                               : ""),
+                          // leading: Checkbox(
+                          //     value: isCompleted, onChanged:
+                          // onChanged),
                           trailing: IconButton(
                             onPressed: () {
                               setState(() {

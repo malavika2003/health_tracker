@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:health_tracker/widgets/main_drawer.dart';
 import 'package:health_tracker/widgets/quotes_area.dart';
+import 'package:health_tracker/widgets/emoji_card.dart';
+
+import '../widgets/bottom_navigation_bar.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -19,23 +22,18 @@ class HomeScreen extends StatelessWidget {
       drawer:const MainDrawer(),
 
 
-      body: const Column(
+      body:  Column(
         children: [
-          SizedBox(height: 20),
-          QuotesSection(),
-        ],
-      ),
-
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home),label: 'Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.emoji_emotions),label: 'Meditate'),
-          BottomNavigationBarItem(icon: Icon(Icons.list_alt),label: 'Task'),
-          BottomNavigationBarItem(icon: Icon(Icons.person),label: 'Profile'),
+         const SizedBox(height: 20),
+          const QuotesSection(),
+          const SizedBox(height: 20),
+          MoodInputScreen(),
+          const SizedBox(height: 20),
 
         ],
       ),
+
+      bottomNavigationBar: const BottomNavigation(),
     );
   }
 }
