@@ -17,7 +17,7 @@ class StartingPage extends StatelessWidget{
        children: [
          Opacity(
            opacity: 0.6,
-           child: Container(
+           child:  Container(
              height: double.infinity,
              width: double.infinity,
              decoration: const BoxDecoration(
