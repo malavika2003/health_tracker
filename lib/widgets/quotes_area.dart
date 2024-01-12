@@ -114,7 +114,7 @@ class _QuotesSectionState extends State<QuotesSection> {
   }
 
   void startImageRotation() {
-    const Duration rotationDuration = Duration(seconds: 10);
+    const Duration rotationDuration = Duration(seconds: 100);
 
     Timer.periodic(rotationDuration, (timer) {
       if (imageList != null && imageList!.isNotEmpty) {
