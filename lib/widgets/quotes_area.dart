@@ -13,7 +13,7 @@ class QuotesSection extends StatefulWidget {
 
 class _QuotesSectionState extends State<QuotesSection> {
   var accessKey = 'eTdRNnruPpky2ANZXVM80Ovy-Eas2kc8Nm_fAaO10N0';
-  var category = 'happiness';
+  var category = 'inspirational';
   var apiKey = 'VOKAD3v8FLR7fPMxJsrnNw==5X4ltVJXs0SspJVX';
   List<dynamic>? quoteList;
   int imagenumber = 0;
@@ -85,7 +85,7 @@ class _QuotesSectionState extends State<QuotesSection> {
                   ),
                 )
                     : Text(
-                  "No quotes available.",
+                  "Nothing is impossible. The word itself says 'I'm possible!",
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: getContrastColor(
