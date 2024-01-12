@@ -1,14 +1,11 @@
 import 'dart:async';
 import 'dart:convert';
-
+import 'dart:ui'; // Import the 'ui' library for the Color class
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 
-
 class QuotesSection extends StatefulWidget {
-  const QuotesSection({super.key});
-
-
+  const QuotesSection({Key? key});
 
   @override
   State<QuotesSection> createState() => _QuotesSectionState();
@@ -19,11 +16,19 @@ class _QuotesSectionState extends State<QuotesSection> {
   var category = 'happiness';
   var apiKey = 'VOKAD3v8FLR7fPMxJsrnNw==5X4ltVJXs0SspJVX';
   List<dynamic>? quoteList;
-
-
   int imagenumber = 0;
-
   List? imageList = [];
+
+  Color getContrastColor(Color backgroundColor) {
+
+    double luminance = (0.299 * backgroundColor.red +
+        0.587 * backgroundColor.green +
+        0.114 * backgroundColor.blue) /
+        255;
+
+
+    return luminance > 0.2 ? Colors.black : Colors.white;
+  }
 
   @override
   void initState() {
@@ -31,7 +36,6 @@ class _QuotesSectionState extends State<QuotesSection> {
     getImage();
     startImageRotation();
     getQuotes();
-
   }
 
   @override
@@ -63,35 +67,33 @@ class _QuotesSectionState extends State<QuotesSection> {
                   ),
                 ),
               ),
-
             Positioned(
               left: 0,
               right: 0,
               bottom: 20,
-
               child: Container(
                 padding: const EdgeInsets.symmetric(vertical: 20),
                 child: quoteList != null && quoteList!.isNotEmpty
                     ? Text(
-                  "\"${quoteList![0]['quote']}\" - ${quoteList![0]['author']}",
-
+                  "\"${quoteList![0]['quote'] ?? ''}\"",
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    color: Theme.of(context).colorScheme.onBackground.withOpacity(0.9),
+                    color: getContrastColor(
+                        Theme.of(context).colorScheme.onBackground),
                     fontWeight: FontWeight.bold,
                     fontSize: 20,
                   ),
                 )
                     : Text(
-                "No quotes available.",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: Theme.of(context).colorScheme.onBackground.withOpacity(0.9),
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20,
+                  "No quotes available.",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: getContrastColor(
+                        Theme.of(context).colorScheme.onBackground),
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
                 ),
-              ),
-
               ),
             ),
           ],
@@ -101,19 +103,18 @@ class _QuotesSectionState extends State<QuotesSection> {
   }
 
   void getImage() async {
-    var url = 'https://api.unsplash.com/search/photos?per_page=30&query=nature&order_by=relevant&client_id=$accessKey';
+    var url =
+        'https://api.unsplash.com/search/photos?per_page=30&query=nature&order_by=relevant&client_id=$accessKey';
     var uri = Uri.parse(url);
     var response = await http.get(uri);
     var unsplashData = json.decode(response.body);
-
     setState(() {
       imageList = unsplashData['results'];
     });
   }
 
   void startImageRotation() {
-
-    const Duration rotationDuration = Duration(seconds: 1000);
+    const Duration rotationDuration = Duration(seconds: 10);
 
     Timer.periodic(rotationDuration, (timer) {
       if (imageList != null && imageList!.isNotEmpty) {
@@ -123,6 +124,7 @@ class _QuotesSectionState extends State<QuotesSection> {
       }
     });
   }
+
   void getQuotes() async {
     var apiUrl = 'https://api.api-ninjas.com/v1/quotes?category=$category';
     try {
@@ -133,7 +135,7 @@ class _QuotesSectionState extends State<QuotesSection> {
 
       if (response.statusCode == 200) {
         setState(() {
-          quoteList = json.decode(response.body)['results'];
+          quoteList = json.decode(response.body);
         });
       } else {
         print("Error: ${response.statusCode} ${response.body}");
@@ -143,7 +145,3 @@ class _QuotesSectionState extends State<QuotesSection> {
     }
   }
 }
-
-
-
-
