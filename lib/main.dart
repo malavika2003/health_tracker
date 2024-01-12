@@ -36,7 +36,7 @@ class App extends StatelessWidget{
     return MaterialApp(
         theme: theme,
         home: const StartingPage()
-     // const TaskScreen(),
+      //const TaskScreen(),
     );
   }
 }

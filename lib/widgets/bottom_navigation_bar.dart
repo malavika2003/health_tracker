@@ -18,7 +18,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
   static const List<Widget> _widgetoptions = <Widget>[
      HomeScreen(),
     MeditateScreen(),
-   TaskScreen(),
+    TaskScreen(),
      ProfileScreen(),
   ];
   void _onItemTapped(int index) {

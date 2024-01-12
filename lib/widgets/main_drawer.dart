@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:health_tracker/screens/starting_page.dart';
 
 class MainDrawer extends StatelessWidget {
   const MainDrawer({super.key});
@@ -46,7 +47,12 @@ class MainDrawer extends StatelessWidget {
                 fontSize: 24
               ),
             ),
-            onTap: () {FirebaseAuth.instance.signOut();},
+            onTap: () {FirebaseAuth.instance.signOut();
+              Navigator.of(context).pushReplacement(MaterialPageRoute(builder:
+                  (ctx) => const StartingPage()
+              ),);
+
+              },
           )
 
         ],
