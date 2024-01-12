@@ -85,7 +85,7 @@ class _QuotesSectionState extends State<QuotesSection> {
                   ),
                 )
                     : Text(
-                  "Nothing is impossible. The word itself says 'I'm possible!",
+                  "No quotes available.",
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: getContrastColor(
