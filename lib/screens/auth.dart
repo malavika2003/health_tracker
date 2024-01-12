@@ -32,9 +32,12 @@ class AuthScreen extends StatefulWidget{
         //print(userCredentials);
       }
       else {
+
         final userCredentials = await _firebase.createUserWithEmailAndPassword(
             email: _enteredEmail,
             password: _enteredPassword);
+        //User? user = userCredentials.user;
+        //user?.updateDisplayName('username');
         //print(userCredentials);
         await FirebaseFirestore.instance
             .collection('users')

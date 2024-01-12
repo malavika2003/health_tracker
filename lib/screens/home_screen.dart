@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:health_tracker/widgets/main_drawer.dart';
 import 'package:health_tracker/widgets/quotes_area.dart';
 import 'package:health_tracker/widgets/emoji_card.dart';
-import 'package:health_tracker/services/images.dart';
 import '../widgets/bottom_navigation_bar.dart';
-import 'package:http/http.dart' as http;
+//import 'package:http/http.dart' as http;
 
 
 
