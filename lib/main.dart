@@ -39,11 +39,11 @@ class App extends StatelessWidget{
   Widget build(BuildContext context) {
     return MaterialApp(
         theme: theme,
-        home: WriteWidget()
+        home: //WriteWidget()
       //BlogsNextScreen(),
       // ListYoga()
          //MeditateScreen()
-      //const StartingPage()
+      const StartingPage()
       //const TaskScreen(),
 
     );
