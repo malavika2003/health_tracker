@@ -1,29 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:health_tracker/screens/blogs_next.dart';
-import 'package:health_tracker/screens/list_yoga.dart';
 
-import '../widgets/bottom_navigation_bar.dart';
-import '../widgets/main_drawer.dart';
-class MeditateScreen extends StatelessWidget {
-  const MeditateScreen({super.key});
+class BlogsNextScreen extends StatelessWidget {
+  const BlogsNextScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          "Meditate",
-          style: Theme
-              .of(context)
-              .textTheme
-              .headlineLarge!
-              .copyWith(
-              color: Colors.black)
+        title: const Text(
+          'What do you want to do today?',
+          style: TextStyle(
+            fontSize: 24,
+          ),
         ),
-        centerTitle: true,
+        toolbarHeight: 120,
       ),
-      drawer: const MainDrawer(),
-      body: GridView(
+
+      body:
+      GridView(
         padding: const EdgeInsets.all(24.0),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 1,
@@ -33,7 +27,7 @@ class MeditateScreen extends StatelessWidget {
         ),
         children: [
           SizedBox(
-            height: 200,
+            height: 300,
             child: Card(
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(90),
@@ -45,49 +39,21 @@ class MeditateScreen extends StatelessWidget {
                   IconButton(
                     onPressed: () {},
                     icon: const Icon(
-                      Icons.music_note_outlined,
+                      Icons.edit,
                       size: 100,
-                      color: Colors.pink,
+                      color: Colors.orange,
                     ),
                   ),
                   const SizedBox(height: 16),
-                  Text(
-                    'Music',
+                  const Text(
+                    'Write your stories here!!',
                     style: TextStyle(fontSize: 28),
                   ),
                 ],
               ),
             ),
           ),
-          SizedBox(
-            height: 200,
-            child: Card(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(90),
-                side: BorderSide(color: Colors.blueGrey, width: 2.0),
-              ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  IconButton(
-                    onPressed: () {
-                      Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=> const ListYoga()));
-                    },
-                    icon: const Icon(
-                      Icons.self_improvement_outlined,
-                      size: 100,
-                      color: Colors.pinkAccent,
-                    ),
-                  ),
-                  const SizedBox(height: 16),
-                  Text(
-                    'Yoga',
-                    style: TextStyle(fontSize: 28),
-                  ),
-                ],
-              ),
-            ),
-          ),
+
           SizedBox(
             height: 200,
             child: Card(
@@ -105,13 +71,13 @@ class MeditateScreen extends StatelessWidget {
                     },
                     icon: const Icon(
                       Icons.book,
-                      color: Colors.pinkAccent,
+                      color: Colors.orange,
                       size: 100,
                     ),
                   ),
                   const SizedBox(height: 16),
                   Text(
-                    'Blogs',
+                    'Read your stories here!!',
                     style: TextStyle(fontSize: 28),
                   ),
                 ],
@@ -120,7 +86,6 @@ class MeditateScreen extends StatelessWidget {
           ),
         ],
       ),
-      bottomNavigationBar: const BottomNavigation(),
     );
   }
 }
