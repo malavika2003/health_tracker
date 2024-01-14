@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:health_tracker/screens/blogs_next.dart';
-import 'package:health_tracker/screens/list_yoga.dart';
+import 'package:health_tracker/screens/music_screen.dart';
+//import 'package:health_tracker/views/music_player.dart';
+//import 'package:health_tracker/views/music_player.dart';
 
 import '../widgets/bottom_navigation_bar.dart';
 import '../widgets/main_drawer.dart';
+import 'blogs_next.dart';
+import 'list_yoga.dart';
 class MeditateScreen extends StatelessWidget {
   const MeditateScreen({super.key});
 
@@ -43,7 +46,12 @@ class MeditateScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => MusicList()),
+                      );
+                    },
                     icon: const Icon(
                       Icons.music_note_outlined,
                       size: 100,
@@ -64,7 +72,7 @@ class MeditateScreen extends StatelessWidget {
             child: Card(
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(90),
-                side: BorderSide(color: Colors.blueGrey, width: 2.0),
+                side: const BorderSide(color: Colors.blueGrey, width: 2.0),
               ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -101,11 +109,10 @@ class MeditateScreen extends StatelessWidget {
                   IconButton(
                     onPressed: () {
                       Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=> const BlogsNextScreen()));
-
                     },
                     icon: const Icon(
                       Icons.book,
-                      color: Colors.pinkAccent,
+                      color: Colors.blueGrey,
                       size: 100,
                     ),
                   ),
