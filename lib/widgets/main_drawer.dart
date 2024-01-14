@@ -15,8 +15,8 @@ class MainDrawer extends StatelessWidget {
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: [
-                  Theme.of(context).colorScheme.primary,
-                  Theme.of(context).colorScheme.primary.withOpacity(0.8),
+                  Theme.of(context).colorScheme.tertiary,
+                  Theme.of(context).colorScheme.tertiary.withOpacity(0.8),
                 ],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
@@ -24,6 +24,7 @@ class MainDrawer extends StatelessWidget {
             ),
             child: Row(
               children: [
+
                 Icon(Icons.self_improvement,
                 size: 48,
                 color: Theme.of(context).colorScheme.onSecondaryContainer,),
@@ -39,14 +40,15 @@ class MainDrawer extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.logout,
               size: 48,
-              color: Theme.of(context).colorScheme.primary,
+              color: Theme.of(context).colorScheme.tertiary,
             ),
             title:  Text('Logout',
               style: Theme.of(context).textTheme.titleSmall!.copyWith(
-                color: Theme.of(context).colorScheme.primary,
+                color: Theme.of(context).colorScheme.tertiary,
                 fontSize: 24
               ),
             ),
+
             onTap: () {FirebaseAuth.instance.signOut();
               Navigator.of(context).pushReplacement(MaterialPageRoute(builder:
                   (ctx) => const StartingPage()

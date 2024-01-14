@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:health_tracker/screens/read_screen.dart';
+import 'package:health_tracker/widgets/write_widget.dart';
 
 class BlogsNextScreen extends StatelessWidget {
   const BlogsNextScreen({super.key});
@@ -37,7 +39,10 @@ class BlogsNextScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=> const WriteWidget()));
+
+                    },
                     icon: const Icon(
                       Icons.edit,
                       size: 100,
@@ -66,7 +71,7 @@ class BlogsNextScreen extends StatelessWidget {
                 children: [
                   IconButton(
                     onPressed: () {
-                      Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=> const BlogsNextScreen()));
+                      Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=> const ReadScreen()));
 
                     },
                     icon: const Icon(
