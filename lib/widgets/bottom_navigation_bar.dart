@@ -4,6 +4,8 @@ import 'package:health_tracker/screens/meditate_screen.dart';
 import 'package:health_tracker/screens/profile_screen.dart';
 import 'package:health_tracker/screens/task_screen.dart';
 
+import 'chatbot_widget.dart';
+
 
 class BottomNavigation extends StatefulWidget {
   const BottomNavigation({super.key});
@@ -19,8 +21,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
      HomeScreen(),
     MeditateScreen(),
     TaskScreen(),
-     ProfileScreen(),
-  ];
+    ChatBotWidget()  ];
   void _onItemTapped(int index) {
     setState(() {
       _currentPageIndex = index;
@@ -61,8 +62,8 @@ class _BottomNavigationState extends State<BottomNavigation> {
 
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Profile',
+            icon: Icon(Icons.ac_unit),
+            label: 'HealthBot',
 
           ),
 
