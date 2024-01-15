@@ -18,9 +18,13 @@ Features included are
 * Healthbot- user can communicate to our AI chatbot and get some useful suggestions.
 
 ## Installation
-To install flutter 
+### To install flutter 
 
 - https://docs.flutter.dev/get-started/install/windows/mobile?tab=download
+
+### To configure the DialogFlow (For configuring chatbot)
+
+Kindly follow these [steps](docs/README_for_DialogFlowSetup.md) for configuration
 
 ## Dependencies
 * Flutter sdk
